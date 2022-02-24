@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  # get 'pages/hello'
-  get '/greeting', to: 'custom_pages#hello'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  # Defines the root path route ("/")
-  root "pages#hello"
+  resources :users, only: [:show, :index] do
+    resources :posts, only: [:show, :index]
+  end
 end

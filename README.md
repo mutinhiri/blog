@@ -1,24 +1,81 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Blog-of-everything
 
-Things you may want to cover:
+> This is the Ruby on Rails application, in this project I will create a blog with ruby on rails with Postgresql database.
 
-* Ruby version
+## Built With
 
-* System dependencies
+- Ruby
+- Ruby on Rails
+- Git
+- Postgresql
 
-* Configuration
+## Getting Started
 
-* Database creation
+To get a local copy up and running follow these simple example steps.
 
-* Database initialization
+- Copy Repo Link
 
-* How to run the test suite
+```
+https://github.com/mutinhiri/blog.git
+```
+- Get the directory that you want to clone the repository.
 
-* Services (job queues, cache servers, search engines, etc.)
+- Open the command prompt in this directory.
 
-* Deployment instructions
+- Copy clone of the Repo
 
-* ...
+```
+git clone https://github.com/mutinhiri/blog.git
+```
+
+- Go to the repository folder in your command prompt.
+
+```
+cd blog
+```
+- Install bundles
+
+```
+bundle install
+```
+
+- Start rails server
+
+```rails s```
+
+- to create databases and populate them with seeds.rb
+ 
+ ```rails db:setup```
+
+### Prerequisites
+
+- Ruby
+- Ruby on Rails
+- Postgresql
+## Authors
+
+👤 **Barnabas Mutinhiri** 
+
+- GitHub: [@mutinhiri](https://github.com/mutinhiri)
+- Twitter: [@Bunbee02](https://twitter.com/Bunbee02) 
+- LinkedIn: [@bunbee] (https://www.linkedin.com/in/bunbee/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- This project built in Microverse's Fourth Module's Capstone.
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
