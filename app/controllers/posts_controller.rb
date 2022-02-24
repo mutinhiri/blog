@@ -4,6 +4,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    2post_items = Post.find(params[:id])
+    post_items = Post.find(params[:id])
   end
 end
