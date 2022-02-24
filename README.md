@@ -41,10 +41,14 @@ cd blog
 bundle install
 ```
 
-- rails s 
+- Start rails server
 
+```rails s```
 
-- rails db:setup to create databases and populate them with seeds.rb
+- to create databases and populate them with seeds.rb
+ 
+ ```rails db:setup```
+
 ### Prerequisites
 
 - Ruby
