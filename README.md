@@ -45,11 +45,6 @@ bundle install
 
 
 - rails db:setup to create databases and populate them with seeds.rb
-```
-
-
-
-
 ### Prerequisites
 
 - Ruby
@@ -62,9 +57,6 @@ bundle install
 - GitHub: [@mutinhiri](https://github.com/mutinhiri)
 - Twitter: [@Bunbee02](https://twitter.com/Bunbee02) 
 - LinkedIn: [@bunbee] (https://www.linkedin.com/in/bunbee/)
-
-
-
 
 ## 🤝 Contributing
 
