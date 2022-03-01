@@ -1,3 +1,8 @@
 <h1>Show user posts here </h1>
-<h2><a href="/users">go to users</a></h2>
-<h2><a href="/users/index/posts/index">show all posts info</a></h2>
+<div>
+  <div class ='user'>
+    <div>img src=@user.Photo</div>
+    <h2>User <%= @user.name%></h2>
+    <p>Number of posts: <%= @user.posts_counter%></p>
+  </div>
+</div>
