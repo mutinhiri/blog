@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   has_many :comments
-  belongs_to :user
+  belongs_to :author, class_name: 'User'
   has_many :like
 
   def recent_comments
