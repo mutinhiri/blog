@@ -1,15 +1,11 @@
-<h2>
-  <%= link_to "Go to all users", "/users", class: "button" %>
-</h2>
-
 <section class="user-profile">
-  <div class="header">
+  <div class="header-user">
 
-    <div class='users_img'>
+    <div class='user-img'>
       <img src=<%=@user.photo%>>
     </div>
 
-    <div class="user-info">
+    <div class="user_item">
       <h2>User:<%=@user.name%></h2>
       <p>Number of posts: <%=@user.posts_counter%></p>
     </div>
@@ -21,7 +17,7 @@
     <p class="bio"> <%=@user.bio%> </p>
 
     <ul class='recent-posts'>
-      This is the UL
+      
       <%@list_post.each do |p|%>
 
       <li class='post'>
@@ -29,7 +25,7 @@
         <p> Text:<%= p.text %></p>
         <div>
           Comments: <%= p.comments_counter %>
-          Likes: <%= p.likes_counter %>
+          Likes: 0<%= p.likes_counter %>
         </div>
       </li>
 

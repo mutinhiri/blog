@@ -1,27 +1,28 @@
-<h1>show all posts of user</h1>
-<div>
-  <div class='user'>
-    <div><img src=@user.Photo></div>
+<section class = "user-posts">
+  <div class='header-user'>
+    <div class="user-img"><img src= <%=@user.photo%>></div>
+    <div class = 'user_item'>
     <h2>User <%= @user.name%></h2>
     <p>Number of posts: <%= @user.posts_counter%></p>
+    </div>
   </div>
 
   <div>
     <% @posts_list.each do |post| %>
     <ul class='posts'>
       <li class='post'>
-        <%= link_to "/users/#{@user.id}/posts/#{post.id}", :action => 'go' do %>
+        <%= link_to "/users/#{@user.id}/posts/#{post.id}",class:'post-link', :action => 'go' do %>
         <h3>Post # <%= post.id %></h3>
         <%end%>
         <p> Text: <%= post.text %></p>
         <div class='commentslikes'>
           Comments: <%= post.comments_counter %>
-          Likes: <%= post.likes_counter %>
+          Likes: 0<%= post.likes_counter %>
         </div>
       </li>
     </ul>
-    <ul>
-      <li>
+    <ul class = 'recent-comms'>
+      <li class= 'comment'>
         <% post.recent_5_comments.each do |comment| %>
         <p> Username: <%= comment.text %></p>
         <%end%>
