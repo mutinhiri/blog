@@ -1,2 +1,48 @@
-<h1> show user details</h1>
-<h2><a href="/users">go to users</a></h2>
+<h2>
+  <%= link_to "Go to all users", "/users", class: "button" %>
+</h2>
+
+<section class="user-profile">
+  <div class="header">
+
+    <div class='users_img'>
+      <img src=<%=@user.photo%>>
+    </div>
+
+    <div class="user-info">
+      <h2>User:<%=@user.name%></h2>
+      <p>Number of posts: <%=@user.posts_counter%></p>
+    </div>
+
+
+  </div>
+
+  <div class="bio-posts">
+    <p class="bio"> <%=@user.bio%> </p>
+
+    <ul class='recent-posts'>
+      This is the UL
+      <%@list_post.each do |p|%>
+
+      <li class='post'>
+        <h3>Post # <%= p.id %></h3>
+        <p> Text:<%= p.text %></p>
+        <div>
+          Comments: <%= p.comments_counter %>
+          Likes: <%= p.likes_counter %>
+        </div>
+      </li>
+
+      <%end%>
+    </ul>
+
+
+  </div>
+  <div>
+    <%= link_to "See all posts", "#{@user.id}/posts", class: "button" %>
+  </div>
+
+
+
+
+</section>
