@@ -1,3 +1,16 @@
-<h1>show all posts info</h1>
-<h2><a href="/users/index/posts">show all posts of user </a></h2>
-<h2><a href="/users">go to users</a></h2>
+<section class='post_contain'>
+<div class="whole-post">
+  <div class="post_header">
+    <h3><%= @post.title %> by <%= @user.name %></h3>
+    <div class="comments-likes">
+      <p>Comments: <%= @post.comments_counter %></p>
+      <p>Likes: <%=  @post.likes_counter %></p>
+    </div>
+  </div>
+  <p><%= @post.text %></p>
+</div>
+<div class="all-comms">
+  <% @post.comments.each do |comment| %>
+  <p>Username: <%= comment.text %></p>
+  <%end%>
+</div>
