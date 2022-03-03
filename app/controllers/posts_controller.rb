@@ -2,13 +2,15 @@ class PostsController < ApplicationController
   before_action :current_user, only: [:create]
   def index
     @user = User.find(params[:user_id])
-    @posts_list = @user.recent_posts
+    @posts_list = @user.recent_3_posts
   end
 
   def show
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
   end
+
+  private
 
   def create
     new_post = current_user.posts.new(post_params)
