@@ -18,5 +18,5 @@
   <% @post.comments.each do |comment| %>
   <p>Username : <%= comment.text %></p>
   <%end%>
-  <%= render partial: "create_comments", local: { post: @post } %>
+  <%= render partial: "_create_comments", local: { post: @post } %>
 </div>

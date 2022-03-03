@@ -10,8 +10,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  private
-
   def create
     new_post = current_user.posts.new(post_params)
     new_post.likes_counter = 0
@@ -27,6 +25,8 @@ class PostsController < ApplicationController
       end
     end
   end
+
+  private
 
   def post_params
     params.require(:data).permit(:title, :text)
