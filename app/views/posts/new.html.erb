@@ -1,5 +1,5 @@
 <h1 class= "create-post">Create a post</h1>
-<%= form_with_url: user_posts_path, scope: :data do |form| %>
+<%= form_with url: user_posts_path, scope: :data do |form| %>
 <section class="post-form">
   <div class="title-box">
     <%= form.label :title, "Title: "%>
