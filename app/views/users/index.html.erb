@@ -11,7 +11,7 @@
       </div>
       <div class='user_item'>
         <%=link_to "/users/#{user.id}",class: 'user-link', :action => 'go' do%>
-        <h2>User <%= user.name %></h2>
+        <h2>User <%= @user.name %></h2>
         <% end %>
         <p class='posts-count'>Number of posts : <%= user.posts_counter %></p>
       </div>
