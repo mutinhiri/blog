@@ -11,9 +11,10 @@ class CommentsController < ApplicationController
 
     @comment.update_comments_counter
     if @comment.save
-      redirect_to user_post_path(current_user.id, Post.find(params[:post_id]))
+      redirect_to user_post_path(current_user.id, Post.find(params[:post_id])), flash: {alert: 'Comment created'}
     else
-      render :new
+      flash.now[:error] = "Error, couldn't save comment!"
+      render action: new
     end
   end
 
