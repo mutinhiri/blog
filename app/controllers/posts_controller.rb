@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :current_user, only: [:create]
+  before_action :current_user, only: %i[:create]
   def index
     @user = User.find(params[:user_id])
     @posts_list = @user.posts.includes(:comments)
