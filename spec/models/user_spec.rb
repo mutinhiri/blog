@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before(:each) do
-    @user = User.new(name: 'Adam', bio: 'I am a software developer', photo: 'http://genericphoto.com', posts_counter: 0)
+    @user = User.new(name: 'Bunbee', bio: 'I am a software developer', photo: 'http://genericphoto.com', posts_counter: 0)
     6.times do
       Post.new(title: 'Testing post', text: 'This is a post?', comments_counter: 0, likes_counter: 0,
                user_id: @user.id)
@@ -40,7 +40,7 @@ RSpec.describe User, type: :model do
 
   describe 'user model methods tests' do
     before do
-      @user = User.new(name: 'Adam', bio: 'I am a software developer', photo: 'http://genericphoto.com', posts_counter: 0)
+      @user = User.new(name: 'Bunbee', bio: 'I am a software developer', photo: 'http://genericphoto.com', posts_counter: 0)
       4.times do
         Post.new(
           title: 'Testing post',text: 'This is a post?',comments_counter: 0,likes_counter: 0,user_id: @user.id)
@@ -48,7 +48,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'returns the most recent posts and limit to 3 posts' do
-      expect(@user.recent_3_posts).to eq(@user.posts.last(3))
+      expect(@user.recent_posts).to eq(@user.posts.last(3))
     end
   end
 end
