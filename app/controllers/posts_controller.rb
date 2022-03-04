@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def create
+   def create
     new_post = current_user.posts.new(post_params)
     new_post.likes_counter = 0
     new_post.comments_counter = 0
@@ -23,14 +23,15 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html do
         if new_post.save
-          redirect_to "/users/#{new_post.user.id}/posts/", flash: {alert: 'Succesfully created post!'}
+          redirect_to "/users/#{new_post.user.id}/posts/", flash: {notice:'Success! Post has been created!'}
         else
-          render :new, flash.now[:error] = "Error, post not saved"
+          render :new, flash.now[:error] = "Error, post couldn't be saved!"
           render action: 'new'
         end
       end
     end
   end
+
 
   private
 

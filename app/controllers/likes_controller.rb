@@ -5,11 +5,11 @@ class LikesController < ApplicationController
       user_id: current_user.id,
       post_id: @post.id
     )
-  if new_like.save
-    redirect_to "/users/#{@post.user_id}/posts/#{@post.id}", flash: {alert: "Liked!"}
-  else 
-    redirect_to "/users/#{@post.user_id}/posts/#{@post.id}", 
-    flash.now[:error] = "Error, couldn't be liked!"
+    if new_like.save
+      redirect_to "/users/#{@post.user_id}/posts/#{@post.id}", flash: { notice: 'Liked!' }
+    else
+      redirect_to "/users/#{@post.user_id}/posts/#{@post.id}",
+                  flash.now[:error] = "Error, couldn't be liked!"
+    end
   end
-end
 end
