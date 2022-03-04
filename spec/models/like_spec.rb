@@ -4,8 +4,9 @@ require 'rails_helper'
 
 RSpec.describe Like, type: :model do
   before(:each) do
-    @user = User.create(id: 1, name: 'Bunbee', photo: 'https://genericphoto.com/user1', bio: 'Software developer from Taiwan')
-    @post = Post.create(user: @user, title: 'Post 1 title', text: 'this is a post?',likes_counter: 5)
+    @user = User.create(id: 1, name: 'Bunbee', photo: 'https://genericphoto.com/user1',
+                        bio: 'Software developer from Taiwan')
+    @post = Post.create(user: @user, title: 'Post 1 title', text: 'this is a post?', likes_counter: 5)
     @like = Like.new(user_id: @user.id, post_id: @user.id)
   end
 
