@@ -1,7 +1,5 @@
 require 'rails_helper'
 
-require 'rails_helper'
-
 RSpec.describe Like, type: :model do
   before(:each) do
     @user = User.create(id: 1, name: 'Bunbee', photo: 'https://genericphoto.com/user1',
