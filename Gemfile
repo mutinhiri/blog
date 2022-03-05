@@ -73,4 +73,5 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'bullet'
 gem 'rubocop', '>= 1.0', '< 2.0'

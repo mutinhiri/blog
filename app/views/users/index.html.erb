@@ -5,14 +5,14 @@
     <%@users.each do |user|%>
 
     <li class="user">
-      <%=link_to "/users/#{user.id}",class: "user-img", :action => 'go' do%>
-      <div >
-        <img alt="<%= user.name %>'s photo" src=<%=user.photo%>>
-      </div>
-      <% end %>
 
+      <div class="user-img">
+        <%=image_tag("random_face.jpg", class:"user-img", alt: user.name)%>
+      </div>
       <div class='user_item'>
-        <h2>User <%= user.name %></h2>
+        <%=link_to "/users/#{user.id}",class: 'user-link', :action => 'go' do%>
+        <h2>User <%= @user.name %></h2>
+        <% end %>
         <p class='posts-count'>Number of posts : <%= user.posts_counter %></p>
       </div>
 
@@ -20,6 +20,6 @@
     <%end%>
   </ul>
   <%=link_to "/users/1/posts/new",class: "new-form-btn", :action => 'go' do%>
- <button class="button">New Post</button>
+  <button class="button">New Post</button>
   <%end%>
 </div>

@@ -1,22 +1,23 @@
-
 <section class='post_contain'>
-<div class="whole-post">
-  <div class="post_header">
-    <h3><%= @post.title %> by <%= @user.name %></h3>
-    
-    <div class="comments-likes">
-      <p>Comments: <%= @post.comments_counter %></p>
-      <p>Likes: <%=  @post.likes_counter %></p>
-      <%= form_with url: "/posts/#{@post.id}/likes", scope: :like do |form| %>
-    <%= form.submit "Like this post", class: "button"%>
-  <% end %>
+  <div class="whole-post">
+    <div class="post_header">
+      <h3><%= @post.title %> by <%= @user.name %></h3>
+      <%= render 'layouts/alerts' if notice %>
+      <div class="comments-likes">
+        <p>Comments: <%= @post.comments_counter %></p>
+        <p>Likes: <%=  @post.likes_counter %></p>
+        <%= form_with url: "/posts/#{@post.id}/likes", scope: :like do |form| %>
+        <%= form.submit "Like this post", class: "button"%>
+        <% end %>
+      </div>
     </div>
+    <p><%= @post.text %></p>
   </div>
-  <p><%= @post.text %></p>
-</div>
-<div class="all-comms">
-  <% @post.comments.each do |comment| %>
-  <p> <%= @user.name %> <%= comment.text %></p>
-  <%end%>
-  <%= render partial: "create_comments", local: { post: @post } %>
-</div>
+  <div class="all-comms">
+    <% @post.comments.each do |comment| %>
+    <p> <%= @user.name %> <%= comment.text %></p>
+    <%end%>
+    <%= render 'layouts/alerts' if notice %>
+    <%= render partial: "create_comments" %>
+  </div>
+</section>

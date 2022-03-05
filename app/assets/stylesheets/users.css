@@ -98,3 +98,7 @@
   width: max-content;
   justify-self: center;
 }
+
+.user-link {
+  color: #000;
+}

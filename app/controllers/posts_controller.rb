@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
-  before_action :current_user, only: [:create]
+  before_action :current_user, only: %i[create]
   def index
     @user = User.find(params[:user_id])
-    @posts_list = @user.recent_posts
+    @posts_list = @user.posts.includes(:comments)
   end
 
   def new
@@ -23,9 +23,10 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html do
         if new_post.save
-          redirect_to "/users/#{new_post.user.id}/posts/", notice: 'Success!'
+          redirect_to "/users/#{new_post.user.id}/posts/", flash: { notice: 'Success! Post has been created!' }
         else
-          render :new, alert: 'Error!'
+          render :new, flash.now[:error] = "Error, post couldn't be saved!"
+          render action: 'new'
         end
       end
     end

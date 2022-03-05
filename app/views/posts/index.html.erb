@@ -1,9 +1,11 @@
 <section class = "user-posts">
+<%= render 'layouts/alerts' if notice %>
+
   <div class='header-user'>
-    <div class="user-img"><img src= <%=@user.photo%>></div>
+    <div class="user-img"><%=image_tag("random_face.jpg", class:"user-img", alt: @user.name)%></div>
     <div class = 'user_item'>
     <h2>User <%= @user.name%></h2>
-    <p>Number of posts: <%= @user.posts_counter%></p>
+    <p>Number of posts : <%= @user.posts_counter%></p>
     </div>
   </div>
 
