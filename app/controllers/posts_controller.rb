@@ -5,10 +5,10 @@ class PostsController < ApplicationController
     @posts_list = @user.posts.includes(:comments)
   end
 
-  def new
-    @user = User.find(params[:user_id])
-    @post = @user.posts.new
-  end
+#   def new
+#     @user = User.find(params[:user_id])
+#     @post = @user.posts.new
+#   end
 
   def show
     @user = User.find(params[:user_id])
