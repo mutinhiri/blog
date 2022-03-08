@@ -1,7 +1,7 @@
-source 'https://rubygems.org'
+source 'https://rubygems.org' # rubocop:disable Layout/EndOfLine
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.0'
+ruby '3.1.1'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.2', '>= 7.0.2.2'
@@ -28,6 +28,7 @@ gem 'stimulus-rails'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
 
+gem 'devise'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
