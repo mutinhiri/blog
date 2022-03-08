@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'https://rubygems.org' # rubocop:disable Layout/EndOfLine
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.1'
