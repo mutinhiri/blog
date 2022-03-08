@@ -40,7 +40,7 @@ Style/AndOr:
 Style/DefWithParentheses:
   Enabled: false
 Style/EndOfLine:
-  EnforcedStyle: lf
+  EnforcedStyle: crlf
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
 
