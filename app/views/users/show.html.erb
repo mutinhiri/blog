@@ -7,7 +7,13 @@
 
     <div class="user_item">
       <h2>User:<%=@user.name%></h2>
-      <p>Number of posts: <%=@user.posts_counter%></p>
+      <p>Number of posts: 
+        <%if @user.posts_counter === nil%>
+        <%0%>
+        <%else%>
+        <%=@user.posts_counter%>
+        <%end%>
+        </p>
     </div>
 
 
@@ -21,7 +27,7 @@
       <%@list_post.each do |p|%>
 
       <li class='post'>
-        <h3>Post # <%= p.id %></h3>
+        <h3><%=p.title %></h3>
         <p> Text:<%= p.text %></p>
         <div>
           Comments: <%= p.comments_counter %>
