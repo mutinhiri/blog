@@ -43,3 +43,13 @@ RSpec.describe 'Login', type: :feature do
           expect(page).to have_content('Second Post')
           visit user_session_path
         end
+
+        it 'can see some of the posts body' do
+          expect(page).to have_content 'This is first comment for the first post'
+        end
+
+        it 'can see how many likes the post has' do
+          post= Post.first
+          expect(page).to have_content(post.likes_counter)
+        end
+        
