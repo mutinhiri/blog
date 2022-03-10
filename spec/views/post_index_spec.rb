@@ -13,4 +13,6 @@ RSpec.describe 'Login', type: :feature do
             @post2 = Post.create(title: 'Second Post', text: 'Thus is the second post' comments_counter: 0, likes_counter: 0, user: @user1)
             @post3 = Post.create(title: 'Third Post', text: 'This is the third post', comments_counter:0, likes_counter: 0, user: @user1)
 
-            @comment1 = Comment.create(text: 'This is first comment for the first post', user: User.first, post)
+            @comment1 = Comment.create(text: 'This is first comment for the first post', user: User.first, post: Post.first)
+            @comment2 = Comment.create(text: 'This is the second comment', user: User.first, post: Post.first)
+            @comment3 = Comment.create(text: 'This is the third post')
