@@ -33,3 +33,13 @@ RSpec.describe 'Login', type: :feature do
           post = Post.all
           expect(post.size).to eql(3)
         end
+
+        it 'shows number of posts by user' do
+          user = User.First
+          expect(page).to have_content(user.posts_counter)
+        end
+
+        it 'shows post title' do
+          expect(page).to have_content('Second Post')
+          visit user_session_path
+        end
