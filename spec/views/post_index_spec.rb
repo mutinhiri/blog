@@ -10,4 +10,7 @@ RSpec.describe 'Login', type: :feature do
             click_button 'Log in'
 
             @post1 = Post.create(title: 'First Post', text: 'This is the first post', comments_counter: 0, likes_counter: 0, user: @user1)
-            @post
+            @post2 = Post.create(title: 'Second Post', text: 'Thus is the second post' comments_counter: 0, likes_counter: 0, user: @user1)
+            @post3 = Post.create(title: 'Third Post', text: 'This is the third post', comments_counter:0, likes_counter: 0, user: @user1)
+
+            
