@@ -52,4 +52,9 @@ RSpec.describe 'Login', type: :feature do
           post= Post.first
           expect(page).to have_content(post.likes_counter)
         end
-        
+
+        it 'when i click on a post it redirects me to the posts show page' do
+          expect(page).to have_content 'This is the third post'
+        end
+      end
+    end
