@@ -15,4 +15,12 @@ RSpec.describe 'Login', type: :feature do
 
             @comment1 = Comment.create(text: 'This is first comment for the first post', user: User.first, post: Post.first)
             @comment2 = Comment.create(text: 'This is the second comment', user: User.first, post: Post.first)
-            @comment3 = Comment.create(text: 'This is the third post')
+            @comment3 = Comment.create(text: 'This is the third comment',user: User.first, post: Post.first )
+
+            visit user_posts_path(@user1)
+        end
+        
+        it 'shows user photo' do
+            image = page.all('img')
+            expect(image.size).to eql(1)
+        end
