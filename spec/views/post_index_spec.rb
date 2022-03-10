@@ -24,3 +24,12 @@ RSpec.describe 'Login', type: :feature do
             image = page.all('img')
             expect(image.size).to eql(1)
         end
+
+        it 'shows username' do
+          expect(page).to have_content('first')
+        end
+
+        it 'Checks proper post length' do
+          post = Post.all
+          expect(post.size).to eql(3)
+        end
