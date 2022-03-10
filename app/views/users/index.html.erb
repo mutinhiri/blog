@@ -13,7 +13,13 @@
         <%=link_to "/users/#{user.id}",class: 'user-link', :action => 'go' do%>
         <h2>User <%= @user.name %></h2>
         <% end %>
-        <p class='posts-count'>Number of posts : <%= user.posts_counter %></p>
+        <p class='posts-count'>Number of posts :
+         <%if user.posts_counter === nil%>
+         <%=0%>
+         <%else%>
+         <%=user.posts_counter%>
+         <%end%>
+         </p>
       </div>
 
     </li>
